@@ -8,13 +8,13 @@
 import Foundation
 
 struct CitiesApiResponse: Codable {
-    var cities: [String]
+    var cities: [City]
 }
 
 class ApiClient {
     let url = URL(string:"https://dev-69151fz3iy9d189.api.raw-labs.com/mock?endpoint=cities");
     
-    var cities : [String] = [];
+    var cities : [City] = [];
     
     func fetchCities(completion: @escaping () -> ()) {
         guard let url = url else {return};

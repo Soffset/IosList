@@ -16,10 +16,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-bJ-UsT" customClass="TableController" customModule="listFromJson">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-bJ-UsT" customClass="TableController" customModule="listFromJson">
                                 <rect key="frame" x="0.0" y="34" width="414" height="828"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitiesTableCell" rowHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="MDO-Kw-RGV" customClass="CitiesTableViewCell" customModule="listFromJson" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MDO-Kw-RGV" translatesAutoresizingMaskIntoConstraints="NO" id="PKr-Xc-vjv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Low-Je-e6e">
+                                                    <rect key="frame" x="11" y="10" width="98" height="98"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="98" id="Yzd-PO-tch"/>
+                                                        <constraint firstAttribute="width" constant="98" id="dmg-cu-D3R"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugc-gd-njJ" userLabel="nameLabel">
+                                                    <rect key="frame" x="129" y="47" width="50" height="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ugc-gd-njJ" firstAttribute="leading" secondItem="Low-Je-e6e" secondAttribute="trailing" constant="20" id="0Fe-4Q-Mu5"/>
+                                                <constraint firstAttribute="bottom" secondItem="Low-Je-e6e" secondAttribute="bottom" constant="13" id="2tS-5A-KkT"/>
+                                                <constraint firstItem="Low-Je-e6e" firstAttribute="leading" secondItem="PKr-Xc-vjv" secondAttribute="leading" constant="20" id="DQ1-7c-hpb"/>
+                                                <constraint firstItem="Ugc-gd-njJ" firstAttribute="centerX" secondItem="PKr-Xc-vjv" secondAttribute="centerX" id="TdO-6S-ixg"/>
+                                                <constraint firstItem="Low-Je-e6e" firstAttribute="top" secondItem="PKr-Xc-vjv" secondAttribute="top" constant="11" id="fOp-WO-v0S"/>
+                                                <constraint firstItem="Ugc-gd-njJ" firstAttribute="centerY" secondItem="PKr-Xc-vjv" secondAttribute="centerY" id="oUr-9s-A2q"/>
+                                                <constraint firstItem="Low-Je-e6e" firstAttribute="leading" secondItem="PKr-Xc-vjv" secondAttribute="leading" constant="11" id="xM7-ag-nUN"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="oUr-9s-A2q"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityImage" destination="Low-Je-e6e" id="0qd-a3-UAT"/>
+                                            <outlet property="imageView" destination="Low-Je-e6e" id="gS6-Bj-WKF"/>
+                                            <outlet property="nameLabel" destination="Ugc-gd-njJ" id="OT3-Hc-g5W"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
