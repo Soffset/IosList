@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: TableController!
-    let cities = ["Foggia", "Lecce"]
+    var cities = ["Loading"];
+    let apiClient = ApiClient();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,15 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        callAPI()
+        
+        apiClient.fetchCities {
+            print("Completed Fetch:", self.apiClient.cities)
+            self.cities = self.apiClient.cities
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }
